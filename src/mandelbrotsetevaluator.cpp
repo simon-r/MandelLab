@@ -32,6 +32,7 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FI
         FComplex z = FComplex(0,0) ;
 
         results->setVal( indicies[i] , (double)this->p_max_iterations ) ;
+
         for( int cnt = 0 ; cnt < this->p_max_iterations ; cnt++ )
         {
             z = z*z + c ;

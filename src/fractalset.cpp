@@ -17,4 +17,6 @@
 
 FractalSet::FractalSet()
 {
+    p_evaluator = 0 ;
+    p_matrix = 0 ;
 }

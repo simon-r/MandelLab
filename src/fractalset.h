@@ -37,6 +37,8 @@ public:
     void setEvaluator( FractalEvaluatorAbstract* evaluator ) {  p_evaluator = evaluator ; }
     void setResultMatrix( FMatrix* matrix ) { p_matrix = matrix ; }
 
+    void setScheduler() ;
+
     bool run() ;
 
 protected:

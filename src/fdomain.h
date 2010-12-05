@@ -18,6 +18,7 @@
 
 #include <fsize.h>
 #include "fcomplex.h"
+#include "findex.h"
 
 class FDomain
 {
@@ -47,7 +48,7 @@ public:
 
     FComplex getPoint( unsigned int i , unsigned int j ) ;
 
-    bool getRange( FComplexVector& vect ,
+    bool getRange( FComplexVector& vect , FIndiciesVector& i_vect ,
                    unsigned int i , unsigned int j , unsigned int delta_i , unsigned int delta_j ) ;
 
 private:

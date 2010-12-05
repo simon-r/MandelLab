@@ -67,11 +67,15 @@ FComplex FDomain::getPoint( unsigned int i , unsigned int j )
 }
 
 
-bool FDomain::getRange( FComplexVector& vect ,
+bool FDomain::getRange( FComplexVector& vect , FIndiciesVector& i_vect ,
                unsigned int i , unsigned int j , unsigned int delta_i , unsigned int delta_j )
 {
     unsigned int range_size = delta_i*delta_j ;
+
     if( range_size != vect.size() )
+        return false ;
+
+    if( range_size != i_vect.size() )
         return false ;
 
     if( i+delta_i > this->p_size.getHeight() )
@@ -87,6 +91,7 @@ bool FDomain::getRange( FComplexVector& vect ,
         for ( unsigned int jj = 0 ; jj < delta_j ; jj++ )
         {
             vect[index] = this->getPoint( i + ii , j + jj ) ;
+            i_vect[index].setIndex( i + ii , j + jj ) ;
             index++ ;
         }
     }

@@ -11,7 +11,7 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , FIntVect
     if( points.size() != results.size() )
         return false ;
 
-    for( int i = 0 ; i < points.size() ; i++ )
+    for( unsigned int i = 0 ; i < points.size() ; i++ )
     {
         FComplex c = points[i] ;
         FComplex z = FComplex(0,0) ;
@@ -26,7 +26,6 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , FIntVect
                 break ;
             }
         }
-
-        return true ;
     }
+    return true ;
 }

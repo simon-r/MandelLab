@@ -14,9 +14,22 @@
 //   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "fdomain.h"
+#include "math.h"
 
 FDomain::FDomain()
 {
+    setDomain(  -2.0 ,  1.0 ,  -1.0 ,  1.0 ) ;
+}
+
+FDomain::FDomain( double min_x , double max_x , double min_y , double max_y )
+{
+    setDomain(  min_x ,  max_x ,  min_y ,  max_y ) ;
+}
+
+FDomain::FDomain( double min_x , double max_x , double min_y , double max_y , const FSize& size)
+{
+    setDomain(  min_x ,  max_x ,  min_y ,  max_y ) ;
+    setSize( size ) ;
 }
 
 void FDomain::setDomain( double min_x , double max_x , double min_y , double max_y )
@@ -36,3 +49,22 @@ void FDomain::setYDomain( double min_y , double max_y )
     this->setMinY( min_y );
     this->setMaxY( max_y );
 }
+
+FComplex FDomain::getPoint( unsigned int i , unsigned int j )
+{
+
+    if ( i > p_size.getHeight()-1 || j > p_size.getWidth()-1 )
+        return FComplex(NAN,NAN) ;
+
+    FComplex c ;
+
+    double delta_y = ( p_max_y - p_min_y ) / (double)p_size.getHeight() ;
+    c.imag( p_max_y - delta_y*i ) ;
+
+    double delta_x = ( p_max_x- p_min_x ) / (double)p_size.getWidth() ;
+    c.imag( p_max_x - delta_x*i ) ;
+
+    return c ;
+}
+
+

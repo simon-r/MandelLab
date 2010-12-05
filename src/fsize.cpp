@@ -17,4 +17,16 @@
 
 FSize::FSize()
 {
+    setSize( 300 , 300 );
+}
+
+FSize::FSize( unsigned int width, unsigned int height )
+{
+    setSize( width , height );
+}
+
+void FSize::setSize( unsigned int width, unsigned int height )
+{
+    this->setWidth( width );
+    this->setHeight( height );
 }

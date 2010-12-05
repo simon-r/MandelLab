@@ -16,10 +16,15 @@
 #ifndef FDOMAIN_H
 #define FDOMAIN_H
 
+#include <fsize.h>
+#include "fcomplex.h"
+
 class FDomain
 {
 public:
     FDomain();
+    FDomain( double min_x , double max_x , double min_y , double max_y ) ;
+    FDomain( double min_x , double max_x , double min_y , double max_y , const FSize& size) ;
 
     void setMinX( double min_x ) { p_min_x = min_x ; }
     void setMaxX( double max_x ) { p_max_x = max_x ; }
@@ -38,6 +43,10 @@ public:
     double getMinY() { return p_min_y ; }
     double getMaxY() { return p_max_y ; }
 
+    void setSize( const FSize& size ) { p_size = size ; }
+
+    FComplex getPoint( unsigned int i , unsigned int j ) ;
+
 private:
 
     double p_min_x ;
@@ -45,6 +54,8 @@ private:
 
     double p_min_y ;
     double p_max_y ;
+
+    FSize p_size ;
 };
 
 #endif // FDOMAIN_H

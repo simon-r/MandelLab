@@ -20,20 +20,20 @@ class FSize
 {
 public:
     FSize() ;
+    FSize( unsigned int width, unsigned int height ) ;
 
-    void setSize( int width, int height ) ;
+    void setSize( unsigned int width, unsigned int height ) ;
 
-    void setWidth( int width ) ;
-    void setHeight( int height ) ;
+    void setWidth( unsigned int width ) { p_width = width ; }
+    void setHeight( unsigned int height ) { p_height = height ; }
 
-    int getHeight() ;
-    int getWidth() ;
+    unsigned int getHeight() { return p_height ; }
+    unsigned int getWidth() { return p_width ; }
 
 private:
 
-    int p_width ;
-    int p_height ;
-
+    unsigned int p_width ;
+    unsigned int p_height ;
 };
 
 #endif // FSIZE_H

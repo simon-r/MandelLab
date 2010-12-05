@@ -61,8 +61,8 @@ FComplex FDomain::getPoint( unsigned int i , unsigned int j )
     double delta_y = ( p_max_y - p_min_y ) / (double)p_size.getHeight() ;
     c.imag( p_max_y - delta_y*i ) ;
 
-    double delta_x = ( p_max_x- p_min_x ) / (double)p_size.getWidth() ;
-    c.imag( p_max_x - delta_x*i ) ;
+    double delta_x = ( p_max_x - p_min_x ) / (double)p_size.getWidth() ;
+    c.real( p_min_x + delta_x*i ) ;
 
     return c ;
 }

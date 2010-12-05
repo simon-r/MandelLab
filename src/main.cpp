@@ -16,9 +16,20 @@
 #include <QtGui/QApplication>
 #include "mandelmainw.h"
 
+#include "fdomain.h"
+#include <QDebug>
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    FDomain d ;
+
+    FComplex c = d.getPoint( 10 , 10 ) ;
+    qDebug() << c.real() ;
+    qDebug() << c.imag() ;
+
+
     MandelMainW w;
     w.show();
 

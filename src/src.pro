@@ -6,9 +6,8 @@
 
 QT       += core gui
 
-TARGET = Mandel
+TARGET = ../Mandel
 TEMPLATE = app
-
 
 SOURCES += main.cpp\
         mandelmainw.cpp \

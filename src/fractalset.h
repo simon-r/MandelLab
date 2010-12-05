@@ -29,10 +29,10 @@ public:
     FractalSet();
 
     void setSize( const FSize &size ) { p_size = size ; }
-    FSize& getSize() const { return p_size ; }
+    FSize getSize() const { return p_size ; }
 
     void setDomain ( const FDomain &domain ) { p_domain = domain ; }
-    FDomain& getDomain() const { return p_domain ; }
+    FDomain getDomain() const { return p_domain ; }
 
     void setEvaluator( FractalEvaluatorAbstract* evaluator ) {  p_evaluator = evaluator ; }
     void setResultMatrix( FMatrix* matrix ) { p_matrix = matrix ; }

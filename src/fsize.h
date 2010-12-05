@@ -27,8 +27,8 @@ public:
     void setWidth( unsigned int width ) { p_width = width ; }
     void setHeight( unsigned int height ) { p_height = height ; }
 
-    unsigned int getHeight() { return p_height ; }
-    unsigned int getWidth() { return p_width ; }
+    unsigned int getHeight() const { return p_height ; }
+    unsigned int getWidth() const { return p_width ; }
 
 private:
 

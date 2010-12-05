@@ -25,10 +25,16 @@ int main(int argc, char *argv[])
 
     FDomain d ;
 
-    FComplex c = d.getPoint( 10 , 10 ) ;
+
+    FComplex c = d.getPoint( 299 , 299 ) ;
     qDebug() << c.real() ;
     qDebug() << c.imag() ;
 
+    c = d.getPoint( 0 , 0 ) ;
+    qDebug() << c.real() ;
+    qDebug() << c.imag() ;
+
+    return 0 ;
 
     MandelMainW w;
     w.show();

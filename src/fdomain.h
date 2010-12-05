@@ -38,18 +38,18 @@ public:
     void setXDomain( double min_x , double max_x ) ;
     void setYDomain( double min_y , double max_y ) ;
 
-    double getMinX() { return p_min_x ; }
-    double getMaxX() { return p_max_x ; }
+    double getMinX() const { return p_min_x ; }
+    double getMaxX() const { return p_max_x ; }
 
-    double getMinY() { return p_min_y ; }
-    double getMaxY() { return p_max_y ; }
+    double getMinY() const { return p_min_y ; }
+    double getMaxY() const { return p_max_y ; }
 
     void setSize( const FSize& size ) { p_size = size ; }
 
-    FComplex getPoint( unsigned int i , unsigned int j ) ;
+    FComplex getPoint( unsigned int i , unsigned int j ) const ;
 
     bool getRange( FComplexVector& vect , FIndiciesVector& i_vect ,
-                   unsigned int i , unsigned int j , unsigned int delta_i , unsigned int delta_j ) ;
+                   unsigned int i , unsigned int j , unsigned int delta_i , unsigned int delta_j ) const ;
 
 private:
 

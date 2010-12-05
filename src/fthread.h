@@ -17,11 +17,20 @@
 #define FTHREAD_H
 
 #include <QThread>
+#include "fabstractscheduler.h"
 
 class FThread : public QThread
 {
 public:
     FThread();
+
+    void setScheduler( FAbstractScheduler* scheduler ) { p_scheduler = scheduler ; }
+
+    void run() ;
+
+private:
+
+    FAbstractScheduler* p_scheduler ;
 };
 
 #endif // FTHREAD_H

@@ -16,12 +16,24 @@
 #ifndef FABSTRACTSCHEDULER_H
 #define FABSTRACTSCHEDULER_H
 
+#include "fcomplex.h"
+#include "findex.h"
+#include "fmatrix.h"
+#include "fdomain.h"
+
 class FAbstractScheduler
 {
 public:
     FAbstractScheduler();
 
-private:
+    enum JobState { JobError , JobOk , JobTerminated } ;
+
+    virtual void setDomain( const FDomain& domain ) = 0 ;
+
+    virtual JobState getJob( FComplexVector& points , FIndiciesVector& indicies ) = 0 ;
+
+    virtual void acquire() = 0 ;
+    virtual void release() = 0 ;
 
 };
 

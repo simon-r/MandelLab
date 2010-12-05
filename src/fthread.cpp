@@ -18,3 +18,8 @@
 FThread::FThread()
 {
 }
+
+void FThread::run()
+{
+
+}

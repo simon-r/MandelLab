@@ -52,7 +52,6 @@ void FDomain::setYDomain( double min_y , double max_y )
 
 FComplex FDomain::getPoint( unsigned int i , unsigned int j )
 {
-
     if ( i > p_size.getHeight()-1 || j > p_size.getWidth()-1 )
         return FComplex(NAN,NAN) ;
 
@@ -66,5 +65,35 @@ FComplex FDomain::getPoint( unsigned int i , unsigned int j )
 
     return c ;
 }
+
+
+bool FDomain::getRange( FComplexVector& vect ,
+               unsigned int i , unsigned int j , unsigned int delta_i , unsigned int delta_j )
+{
+    unsigned int range_size = delta_i*delta_j ;
+    if( range_size != vect.size() )
+        return false ;
+
+    if( i+delta_i > this->p_size.getHeight() )
+        return false ;
+
+    if( j+delta_j > this->p_size.getWidth() )
+        return false ;
+
+    int index = 0 ;
+
+    for ( unsigned int ii = 0 ; ii < delta_i ; ii++ )
+    {
+        for ( unsigned int jj = 0 ; jj < delta_j ; jj++ )
+        {
+            vect[index] = this->getPoint( i + ii , j + jj ) ;
+            index++ ;
+        }
+    }
+
+    return true ;
+}
+
+
 
 

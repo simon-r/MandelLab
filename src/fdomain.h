@@ -47,6 +47,9 @@ public:
 
     FComplex getPoint( unsigned int i , unsigned int j ) ;
 
+    bool getRange( FComplexVector& vect ,
+                   unsigned int i , unsigned int j , unsigned int delta_i , unsigned int delta_j ) ;
+
 private:
 
     double p_min_x ;

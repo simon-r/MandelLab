@@ -25,7 +25,7 @@ public:
 
     void setMaxIterations( int iterations ) { p_max_iterations = iterations ; }
 
-    virtual bool evalPoints( const FComplexVector& points , const FIndiciesVector& indicies , FMatrix &results );
+    virtual bool evalPoints( const FComplexVector& points , const FIndiciesVector& indicies , FMatrix *results );
 
 private:
     int p_max_iterations ;

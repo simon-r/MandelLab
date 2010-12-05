@@ -25,7 +25,7 @@ class FractalEvaluatorAbstract
 public:
     FractalEvaluatorAbstract();
 
-    virtual bool evalPoints( const FComplexVector& points , const FIndiciesVector& indicies , FMatrix &results ) = 0 ;
+    virtual bool evalPoints( const FComplexVector& points , const FIndiciesVector& indicies , FMatrix *results ) = 0 ;
 };
 
 #endif // FRACTALEVALUATORABSTRACT_H

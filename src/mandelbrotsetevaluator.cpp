@@ -21,7 +21,7 @@ MandelbrotSetEvaluator::MandelbrotSetEvaluator( int iterations )
 }
 
 
-bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FIndiciesVector& indicies , FMatrix &results )
+bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FIndiciesVector& indicies , FMatrix *results )
 {
     if( points.size() != indicies.size() )
         return false ;
@@ -31,13 +31,13 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FI
         FComplex c = points[i] ;
         FComplex z = FComplex(0,0) ;
 
-        results.setVal( indicies[i] , (double)this->p_max_iterations ) ;
+        results->setVal( indicies[i] , (double)this->p_max_iterations ) ;
         for( int cnt = 0 ; cnt < this->p_max_iterations ; cnt++ )
         {
             z = z*z + c ;
             if ( abs( z ) > 1.0 )
             {
-                results.setVal( indicies[i] , (double)cnt ) ;
+                results->setVal( indicies[i] , (double)cnt ) ;
                 break ;
             }
         }

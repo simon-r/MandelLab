@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     fdomain.cpp \
     fractalevaluatorabstract.cpp \
     mandelbrotsetevaluator.cpp \
-    fmatrix.cpp
+    fmatrix.cpp \
+    fabstractscheduler.cpp
 
 HEADERS  += mandelmainw.h \
     fractalset.h \
@@ -27,6 +28,7 @@ HEADERS  += mandelmainw.h \
     mandelbrotsetevaluator.h \
     fcomplex.h \
     findex.h \
-    fmatrix.h
+    fmatrix.h \
+    fabstractscheduler.h
 
 FORMS    += mandelmainw.ui

@@ -6,11 +6,6 @@ class FAbstractScheduler
 public:
     FAbstractScheduler();
 
-
-
-    virtual void notifyProgress( double pr ) = 0 ;
-    virtual void notifyEnd() = 0 ;
-
 private:
 
 };

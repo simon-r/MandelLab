@@ -32,6 +32,9 @@ public:
     virtual void setDomain( const FDomain& domain ) = 0 ;
     virtual JobState getJob( FComplexVector& points , FIndiciesVector& indicies ) = 0 ;
 
+    virtual void stop() = 0 ;
+    virtual void reset() = 0 ;
+
     virtual void acquire() = 0 ;
     virtual void release() = 0 ;
 

@@ -32,6 +32,11 @@ FLineScheduler::JobState FLineScheduler::getJob( FComplexVector& points , FIndic
 
 void FLineScheduler::setDomain( const FDomain& domain )
 {
+    p_domain = domain ;
+}
+
+void FLineScheduler::reset()
+{
 
 }
 
@@ -43,4 +48,9 @@ void FLineScheduler::acquire()
 void FLineScheduler::release()
 {
     p_scheduler_semaphore.release(1);
+}
+
+void FLineScheduler::stop()
+{
+
 }

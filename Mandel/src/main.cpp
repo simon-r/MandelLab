@@ -15,6 +15,7 @@
 
 #include <QtGui/QApplication>
 #include "mandelmainw.h"
+#include "flinescheduler.h"
 
 #include "fdomain.h"
 #include <QDebug>
@@ -26,6 +27,7 @@ int main(int argc, char *argv[])
     FDomain d ;
 
 
+
     FComplex c = d.getPoint( 299 , 299 ) ;
     qDebug() << c.real() ;
     qDebug() << c.imag() ;
@@ -33,6 +35,17 @@ int main(int argc, char *argv[])
     c = d.getPoint( 0 , 0 ) ;
     qDebug() << c.real() ;
     qDebug() << c.imag() ;
+
+    FLineScheduler fl ;
+
+    FComplexVector ve ;
+    ve.resize(3000);
+
+    FIndiciesVector vi ;
+    vi.resize(3000);
+
+    fl.reset();
+    fl.getJob( ve , vi ) ;
 
     return 0 ;
 

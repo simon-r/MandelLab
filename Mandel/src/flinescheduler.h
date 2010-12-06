@@ -31,6 +31,11 @@ public:
     virtual void setDomain( const FDomain& domain ) ;
     virtual JobState getJob( FComplexVector& points , FIndiciesVector& indicies ) ;
 
+    unsigned int getJobSize() const ;
+    void setLineStep( unsigned int step ) { p_step = step ; }
+
+    unsigned int setAutoLineStep() ;
+
     virtual void stop() ;
     virtual void reset() ;
 
@@ -43,6 +48,10 @@ private:
     QSemaphore p_scheduler_semaphore ;
 
     int p_job_size ;
+    bool p_f_stop ;
+    int p_step ;
+
+    unsigned int p_current_line ;
 };
 
 #endif // FLINESCHEDULER_H

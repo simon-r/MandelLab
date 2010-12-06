@@ -22,6 +22,8 @@ using namespace std ;
 
 class FIndex {
 public:
+
+    FIndex() { setIndex( 0 , 0 ) ; }
     FIndex( unsigned int i , unsigned int j ) { setIndex( i , j ) ; }
 
     void setIndex( unsigned int i , unsigned int j ) { setI( i ) ; setJ( j ) ; }

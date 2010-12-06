@@ -27,7 +27,7 @@ class FAbstractScheduler
 public:
     FAbstractScheduler();
 
-    enum JobState { JobError , JobOk , JobTerminated } ;
+    enum JobState { JobError , JobOk , JobTerminated , JobStopped } ;
 
     virtual void setDomain( const FDomain& domain ) = 0 ;
     virtual JobState getJob( FComplexVector& points , FIndiciesVector& indicies ) = 0 ;

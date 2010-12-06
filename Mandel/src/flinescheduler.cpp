@@ -16,27 +16,66 @@
 #include "flinescheduler.h"
 
 FLineScheduler::FLineScheduler() :
-       p_scheduler_semaphore(1)
+        p_scheduler_semaphore(1),
+        p_f_stop(false),
+        p_current_line(0)
 {
 }
 
 FLineScheduler::JobState FLineScheduler::getJob( FComplexVector& points , FIndiciesVector& indicies )
 {
-    this->acquire();
+    this->acquire() ;
+    bool f ;
 
+    if ( p_f_stop )
+    {
+        this->release() ;
+        return FLineScheduler::JobStopped ;
+    }
 
+    unsigned int w = p_domain.getSize().getWidth() ;
+    unsigned int delta_s = 0 ;
+    unsigned int h = p_domain.getSize().getHeight() ;
+
+    if ( p_current_line+p_step >= h )
+        delta_s = p_current_line+p_step - h ;
+
+    f = p_domain.getRange( points , indicies , p_current_line , 0 , p_step - delta_s , w ) ;
+
+    if ( f == false )
+    {
+        this->release() ;
+        return FLineScheduler::JobError ;
+    }
+
+    p_current_line+=p_step ;
 
     this->release();
     return FLineScheduler::JobOk ;
 }
 
+unsigned int FLineScheduler::getJobSize() const
+{
+    return p_step * p_domain.getSize().getWidth() ;
+}
+
+unsigned int FLineScheduler::setAutoLineStep()
+{
+    p_step = 10 ;
+    return p_step ;
+}
+
 void FLineScheduler::setDomain( const FDomain& domain )
 {
     p_domain = domain ;
+    this->reset() ;
 }
 
 void FLineScheduler::reset()
 {
+    p_f_stop = false ;
+    p_current_line = 0 ;
+    p_step = 10 ;
 
 }
 
@@ -52,5 +91,5 @@ void FLineScheduler::release()
 
 void FLineScheduler::stop()
 {
-
+    p_f_stop = true ;
 }

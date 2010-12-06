@@ -21,6 +21,7 @@
 #include "fmatrix.h"
 #include "fdomain.h"
 
+
 class FAbstractScheduler
 {
 public:
@@ -29,11 +30,11 @@ public:
     enum JobState { JobError , JobOk , JobTerminated } ;
 
     virtual void setDomain( const FDomain& domain ) = 0 ;
-
     virtual JobState getJob( FComplexVector& points , FIndiciesVector& indicies ) = 0 ;
 
     virtual void acquire() = 0 ;
     virtual void release() = 0 ;
+
 };
 
 #endif // FABSTRACTSCHEDULER_H

@@ -45,6 +45,7 @@ public:
     double getMaxY() const { return p_max_y ; }
 
     void setSize( const FSize& size ) { p_size = size ; }
+    FSize getSize() const { return p_size ; }
 
     FComplex getPoint( unsigned int i , unsigned int j ) const ;
 

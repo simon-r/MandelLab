@@ -21,14 +21,14 @@
 class MandelbrotSetEvaluator : public FractalEvaluatorAbstract
 {
 public:
-    MandelbrotSetEvaluator( int iterations = 100 );
+    MandelbrotSetEvaluator( unsigned int iterations = 100 );
 
-    void setMaxIterations( int iterations ) { p_max_iterations = iterations ; }
+    void setMaxIterations( unsigned int iterations ) { p_max_iterations = iterations ; }
 
     virtual bool evalPoints( const FComplexVector& points , const FIndiciesVector& indicies , FMatrix *results );
 
 private:
-    int p_max_iterations ;
+    unsigned int p_max_iterations ;
 };
 
 #endif // MANDELBROTSETEVALUATOR_H

@@ -21,30 +21,30 @@ FDomain::FDomain()
     setDomain(  -2.0 ,  1.0 ,  -1.0 ,  1.0 ) ;
 }
 
-FDomain::FDomain( double min_x , double max_x , double min_y , double max_y )
+FDomain::FDomain( FDouble min_x , FDouble max_x , FDouble min_y , FDouble max_y )
 {
     setDomain(  min_x ,  max_x ,  min_y ,  max_y ) ;
 }
 
-FDomain::FDomain( double min_x , double max_x , double min_y , double max_y , const FSize& size)
+FDomain::FDomain( FDouble min_x , FDouble max_x , FDouble min_y , FDouble max_y , const FSize& size)
 {
     setDomain(  min_x ,  max_x ,  min_y ,  max_y ) ;
     setSize( size ) ;
 }
 
-void FDomain::setDomain( double min_x , double max_x , double min_y , double max_y )
+void FDomain::setDomain( FDouble min_x , FDouble max_x , FDouble min_y , FDouble max_y )
 {
     this->setXDomain( min_x , max_x ) ;
     this->setYDomain( min_y , max_y ) ;
 }
 
-void FDomain::setXDomain( double min_x , double max_x )
+void FDomain::setXDomain( FDouble min_x , FDouble max_x )
 {
     this->setMinX( min_x );
     this->setMaxX( max_x );
 }
 
-void FDomain::setYDomain( double min_y , double max_y )
+void FDomain::setYDomain( FDouble min_y , FDouble max_y )
 {
     this->setMinY( min_y );
     this->setMaxY( max_y );
@@ -57,10 +57,10 @@ FComplex FDomain::getPoint( unsigned int i , unsigned int j ) const
 
     FComplex c ;
 
-    double delta_y = ( p_max_y - p_min_y ) / (double)p_size.getHeight() ;
+    FDouble delta_y = ( p_max_y - p_min_y ) / (FDouble)p_size.getHeight() ;
     c.imag( p_max_y - delta_y*i ) ;
 
-    double delta_x = ( p_max_x - p_min_x ) / (double)p_size.getWidth() ;
+    FDouble delta_x = ( p_max_x - p_min_x ) / (FDouble)p_size.getWidth() ;
     c.real( p_min_x + delta_x*j ) ;
 
     return c ;

@@ -17,7 +17,7 @@
 
 #include "mandelbrotsetevaluator.h"
 
-MandelbrotSetEvaluator::MandelbrotSetEvaluator( int iterations )
+MandelbrotSetEvaluator::MandelbrotSetEvaluator( unsigned int iterations )
 {
     this->setMaxIterations( iterations ) ;
 }
@@ -34,24 +34,24 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FI
         FComplex z = FComplex(0,0) ;
         FComplex p = FComplex(0,0) ;
 
-        results->setVal( indicies[i] , (double)this->p_max_iterations ) ;
+        results->setVal( indicies[i] , (FDouble)this->p_max_iterations ) ;
         if ( i%1000 == 0 ) qDebug() <<  i ;
 
         for( unsigned int cnt = 0 ; cnt < this->p_max_iterations ; cnt++ )
         {
             z = z*z + c ;
 
-//            double r = z.real() ;
-//            double i = z.imag() ;
+//            FDouble r = z.real() ;
+//            FDouble i = z.imag() ;
 
-//            double cr = c.real() ;
-//            double ci = c.imag() ;
+//            FDouble cr = c.real() ;
+//            FDouble ci = c.imag() ;
 
-            double a = abs( p - z ) ;
+            FDouble a = abs( p - z ) ;
             //qDebug() <<  a ;
             if ( abs( z ) > 1.0 )
             {
-                results->setVal( indicies[i] , double(cnt) ) ;
+                results->setVal( indicies[i] , FDouble(cnt) ) ;
                 break ;
             }
             else if ( a < 1e-16 )

@@ -26,25 +26,25 @@ class FDomain
 {
 public:
     FDomain();
-    FDomain( double min_x , double max_x , double min_y , double max_y ) ;
-    FDomain( double min_x , double max_x , double min_y , double max_y , const FSize& size) ;
+    FDomain( FDouble min_x , FDouble max_x , FDouble min_y , FDouble max_y ) ;
+    FDomain( FDouble min_x , FDouble max_x , FDouble min_y , FDouble max_y , const FSize& size) ;
 
-    void setMinX( double min_x ) { p_min_x = min_x ; }
-    void setMaxX( double max_x ) { p_max_x = max_x ; }
+    void setMinX( FDouble min_x ) { p_min_x = min_x ; }
+    void setMaxX( FDouble max_x ) { p_max_x = max_x ; }
 
-    void setMinY( double min_y ) { p_min_y = min_y ; }
-    void setMaxY( double max_y ) { p_max_y = max_y ; }
+    void setMinY( FDouble min_y ) { p_min_y = min_y ; }
+    void setMaxY( FDouble max_y ) { p_max_y = max_y ; }
 
-    void setDomain( double min_x , double max_x , double min_y , double max_y ) ;
+    void setDomain( FDouble min_x , FDouble max_x , FDouble min_y , FDouble max_y ) ;
 
-    void setXDomain( double min_x , double max_x ) ;
-    void setYDomain( double min_y , double max_y ) ;
+    void setXDomain( FDouble min_x , FDouble max_x ) ;
+    void setYDomain( FDouble min_y , FDouble max_y ) ;
 
-    double getMinX() const { return p_min_x ; }
-    double getMaxX() const { return p_max_x ; }
+    FDouble getMinX() const { return p_min_x ; }
+    FDouble getMaxX() const { return p_max_x ; }
 
-    double getMinY() const { return p_min_y ; }
-    double getMaxY() const { return p_max_y ; }
+    FDouble getMinY() const { return p_min_y ; }
+    FDouble getMaxY() const { return p_max_y ; }
 
     void setSize( const FSize& size ) { p_size = size ; }
     FSize getSize() const { return p_size ; }
@@ -56,11 +56,11 @@ public:
 
 private:
 
-    double p_min_x ;
-    double p_max_x ;
+    FDouble p_min_x ;
+    FDouble p_max_x ;
 
-    double p_min_y ;
-    double p_max_y ;
+    FDouble p_min_y ;
+    FDouble p_max_y ;
 
     FSize p_size ;
 };

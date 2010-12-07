@@ -21,7 +21,9 @@
 
 using namespace std ;
 
-typedef complex< double > FComplex;
+typedef long double FDouble ;
+
+typedef complex< FDouble > FComplex;
 
 typedef vector< FComplex > FComplexVector ;
 
@@ -29,7 +31,7 @@ typedef vector< unsigned int > FUIntVector ;
 
 typedef vector< int > FIntVector ;
 
-typedef vector< double > FDoubleVector ;
+typedef vector< FDouble > FDoubleVector ;
 
 
 

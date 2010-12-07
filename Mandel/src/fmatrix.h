@@ -19,6 +19,7 @@
 #include <vector>
 #include "fsize.h"
 #include "findex.h"
+#include "fcomplex.h"
 
 using namespace std ;
 
@@ -35,13 +36,13 @@ public:
 
     FSize getSize() const { return FSize( s_j , s_i ) ; }
 
-    void setVal( unsigned int i , unsigned int j , double val ) { matrix[s_i*i+j] = val ; }
-    void setVal( FIndex indx , double val ) { setVal( indx.I() , indx.J() , val ) ; }
+    void setVal( unsigned int i , unsigned int j , FDouble val ) { matrix[s_i*i+j] = val ; }
+    void setVal( FIndex indx , FDouble val ) { setVal( indx.I() , indx.J() , val ) ; }
 
     double val( unsigned int i , unsigned int j ) const { return matrix[s_i*i+j] ; }
 
 private:
-    vector< double > matrix ;
+    vector< FDouble > matrix ;
     unsigned int s_i ;
     unsigned int s_j ;
 };

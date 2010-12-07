@@ -29,12 +29,12 @@ int main(int argc, char *argv[])
     FDomain d ;
 
     FComplex c = d.getPoint( 299 , 299 ) ;
-    qDebug() << c.real() ;
-    qDebug() << c.imag() ;
+    qDebug() << (double)c.real() ;
+    qDebug() << (double)c.imag() ;
 
     c = d.getPoint( 0 , 0 ) ;
-    qDebug() << c.real() ;
-    qDebug() << c.imag() ;
+    qDebug() << (double)c.real() ;
+    qDebug() << (double)c.imag() ;
 
     FLineScheduler fl ;
     fl.setDomain(d);

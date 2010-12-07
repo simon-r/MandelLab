@@ -34,17 +34,8 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FI
 
         results->setVal( indicies[i] , (double)this->p_max_iterations ) ;
 
-        unsigned int cnt = 0 ;
 
-        z = z*z + c ;
-        if ( abs( z ) > 1.0 )
-        {
-            results->setVal( indicies[i] , double(cnt) ) ;
-            return true ;
-        }
-        p = z ;
-
-        for( cnt = 1 ; cnt < this->p_max_iterations ; cnt++ )
+        for( unsigned int cnt = 0 ; cnt < this->p_max_iterations ; cnt++ )
         {
             z = z*z + c ;
             if ( abs( z ) > 1.0 )
@@ -54,6 +45,8 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FI
             }
             else if ( abs( p - z ) == 0.0 )
                 return true ;
+
+            p = z ;
         }
     }
     return true ;

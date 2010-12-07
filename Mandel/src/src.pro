@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     fmatrix.cpp \
     fabstractscheduler.cpp \
     fthread.cpp \
-    flinescheduler.cpp
+    flinescheduler.cpp \
+    fpainter.cpp
 
 HEADERS  += mandelmainw.h \
     fractalset.h \
@@ -32,6 +33,7 @@ HEADERS  += mandelmainw.h \
     fmatrix.h \
     fabstractscheduler.h \
     fthread.h \
-    flinescheduler.h
+    flinescheduler.h \
+    fpainter.h
 
 FORMS    += mandelmainw.ui

@@ -17,6 +17,8 @@
 #define MANDELMAINW_H
 
 #include <QMainWindow>
+#include <QGLPixelBuffer>
+#include <QGLWidget>
 
 namespace Ui {
     class MandelMainW;
@@ -32,6 +34,7 @@ public:
 
 private:
     Ui::MandelMainW *ui;
+    QGLWidget* p_glwidget ;
 };
 
 #endif // MANDELMAINW_H

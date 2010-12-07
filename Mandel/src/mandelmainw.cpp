@@ -17,10 +17,16 @@
 #include "ui_mandelmainw.h"
 
 MandelMainW::MandelMainW(QWidget *parent) :
-    QMainWindow(parent),
+        QMainWindow(parent),
     ui(new Ui::MandelMainW)
 {
     ui->setupUi(this);
+
+    QGLWidget* p_glwidget = new QGLWidget() ;
+    QGridLayout *gridLayout = new QGridLayout(ui->scrollArea);
+    gridLayout->setContentsMargins(0,0,0,0);
+
+    ui->scrollArea->setWidget( p_glwidget );
 }
 
 MandelMainW::~MandelMainW()

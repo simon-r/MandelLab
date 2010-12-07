@@ -54,14 +54,14 @@ int main(int argc, char *argv[])
 
     MandelbrotSetEvaluator eval ;
 
-    eval.setMaxIterations( 20000 );
+    eval.setMaxIterations( 30 );
 
     FMatrix ma ;
     ma.setSize( 300 , 300 );
 
     eval.evalPoints( ve , vi  , &ma ) ;
 
-    return 0 ;
+    //return 0 ;
 
     MandelMainW w;
     w.show();

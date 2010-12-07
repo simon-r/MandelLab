@@ -35,7 +35,7 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FI
         FComplex p = FComplex(0,0) ;
 
         results->setVal( indicies[i] , (FDouble)this->p_max_iterations ) ;
-        if ( i%1000 == 0 ) qDebug() <<  i ;
+        //if ( i%1000 == 0 ) qDebug() <<  i ;
 
         for( unsigned int cnt = 0 ; cnt < this->p_max_iterations ; cnt++ )
         {

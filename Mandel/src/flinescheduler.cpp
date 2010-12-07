@@ -75,7 +75,7 @@ void FLineScheduler::reset()
 {
     p_f_stop = false ;
     p_current_line = 0 ;
-    p_step = 10 ;
+   // p_step = 10 ;
 
 }
 

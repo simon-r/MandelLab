@@ -13,6 +13,8 @@
 //   You should have received a copy of the GNU General Public License
 //   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#include<QDebug>
+
 #include "mandelbrotsetevaluator.h"
 
 MandelbrotSetEvaluator::MandelbrotSetEvaluator( int iterations )
@@ -33,18 +35,27 @@ bool MandelbrotSetEvaluator::evalPoints( const FComplexVector& points , const FI
         FComplex p = FComplex(0,0) ;
 
         results->setVal( indicies[i] , (double)this->p_max_iterations ) ;
-
+        if ( i%1000 == 0 ) qDebug() <<  i ;
 
         for( unsigned int cnt = 0 ; cnt < this->p_max_iterations ; cnt++ )
         {
             z = z*z + c ;
+
+//            double r = z.real() ;
+//            double i = z.imag() ;
+
+//            double cr = c.real() ;
+//            double ci = c.imag() ;
+
+            double a = abs( p - z ) ;
+            //qDebug() <<  a ;
             if ( abs( z ) > 1.0 )
             {
                 results->setVal( indicies[i] , double(cnt) ) ;
-                return true ;
+                break ;
             }
-            else if ( abs( p - z ) == 0.0 )
-                return true ;
+            else if ( a < 1e-16 )
+                break ;
 
             p = z ;
         }

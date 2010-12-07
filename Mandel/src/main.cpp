@@ -16,6 +16,8 @@
 #include <QtGui/QApplication>
 #include "mandelmainw.h"
 #include "flinescheduler.h"
+#include "mandelbrotsetevaluator.h"
+#include "fmatrix.h"
 
 #include "fdomain.h"
 #include <QDebug>
@@ -26,8 +28,6 @@ int main(int argc, char *argv[])
 
     FDomain d ;
 
-
-
     FComplex c = d.getPoint( 299 , 299 ) ;
     qDebug() << c.real() ;
     qDebug() << c.imag() ;
@@ -37,15 +37,31 @@ int main(int argc, char *argv[])
     qDebug() << c.imag() ;
 
     FLineScheduler fl ;
+    fl.setDomain(d);
+    fl.setLineStep(300);
+
+    unsigned int sze = fl.getJobSize() ;
 
     FComplexVector ve ;
-    ve.resize(3000);
+    ve.resize(sze);
 
     FIndiciesVector vi ;
-    vi.resize(3000);
+    vi.resize(sze);
 
     fl.reset();
+//    fl.setLineStep(10);
     fl.getJob( ve , vi ) ;
+
+    MandelbrotSetEvaluator eval ;
+
+    eval.setMaxIterations( 1000 );
+
+    FMatrix ma ;
+    ma.setSize( 300 , 300 );
+
+    eval.evalPoints( ve , vi  , &ma ) ;
+
+
 
     return 0 ;
 

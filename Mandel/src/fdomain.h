@@ -19,6 +19,8 @@
 #include <fsize.h>
 #include "fcomplex.h"
 #include "findex.h"
+#include "fmatrix.h"
+
 
 class FDomain
 {

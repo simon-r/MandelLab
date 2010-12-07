@@ -23,6 +23,7 @@ class FThread : public QThread
 {
 public:
     FThread();
+    FThread( FAbstractScheduler* scheduler ) { setScheduler( scheduler ) ; }
 
     void setScheduler( FAbstractScheduler* scheduler ) { p_scheduler = scheduler ; }
 

@@ -15,7 +15,8 @@
 
 #include "fthread.h"
 
-FThread::FThread()
+FThread::FThread() :
+        p_scheduler(0)
 {
 }
 

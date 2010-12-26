@@ -4,8 +4,10 @@ function [ res ] = mandel( c , iter )
 %   iter: iteractions
 
 z = zeros( size(c) ) ;
+p = z ;
+
 res = ones( size(c) )*iter ;
-v = ones(size(c)) == 1 ;
+v = true(size(c)) ;
 
 for i = 1:iter
     z(v) = z(v).^2 + c(v) ;

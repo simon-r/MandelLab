@@ -4,7 +4,7 @@ function [ res ] = mandel( c , iter )
 %   iter: iteractions
 
 z = zeros( size(c) ) ;
-p = z ;
+%p = z ;
 
 res = ones( size(c) )*iter ;
 v = true(size(c)) ;
@@ -19,3 +19,4 @@ end;
 
 end
 
+c = complexmap( 400 , 400 , [-2 1] , [-1 1] ) ;

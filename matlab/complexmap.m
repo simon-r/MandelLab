@@ -1,4 +1,4 @@
-function [ c ] = complexmap( r_size , i_size , r_range , i_range )
+function [ c , delta_r , delta_i ] = complexmap( r_size , i_size , r_range , i_range )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -19,7 +19,6 @@ mr = ones( size( im , 2 ) , 1 ) * re ;
 mi =  -(im') * ones( 1 , size( re , 2 ) ) ;
 
 c = complex( mr , mi ) ;
-
 
 end
 

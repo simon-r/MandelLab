@@ -11,7 +11,7 @@ v = true(size(c)) ;
 
 for i = 1:iter
     z(v) = z(v).^2 + c(v) ;
-    v = ( abs( z ) < 2.0 ) ;
+    v(v) = ( abs( z(v) ) < 2.0 ) ;
     res( res==iter & not(v) ) = i ;
 %     v = v & not(p==z) ;
 %     p = z ;

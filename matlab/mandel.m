@@ -10,7 +10,7 @@ v = ones(size(c)) == 1 ;
 for i = 1:iter
     z(v) = z(v).^2 + c(v) ;
     v = ( abs( z ) < 1.0 ) ;
-    res(res==iter & not(v) ) = i ;
+    res( res==iter & not(v) ) = i ;
 end;
 
 end

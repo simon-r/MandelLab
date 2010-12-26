@@ -10,6 +10,7 @@ r_max = max( r_range ) ;
 
 re = r_min:delta_r:r_max ; 
 
+i_range = -i_range ;
 i_min = min( i_range ) ;
 i_max = max( i_range ) ;
 

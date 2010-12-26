@@ -1,7 +1,7 @@
 function [ res ] = mandel( c , iter )
 %mandel: compute the mendelbrot set
-%   c: c matrix of complex coordinates
-%   iter: iteractions
+%   c: matrix of complex coordinates
+%   iter: max iteractions
 
 z = zeros( size(c) ) ;
 %p = z ;

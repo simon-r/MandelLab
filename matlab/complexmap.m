@@ -16,7 +16,7 @@ i_max = max( i_range ) ;
 im = i_min:delta_i:i_max ;
 
 mr = ones( size( im , 2 ) , 1 ) * re ;
-mi =  im' * ones( 1 , size( re , 2 ) ) ;
+mi =  -(im') * ones( 1 , size( re , 2 ) ) ;
 
 c = complex( mr , mi ) ;
 

@@ -19,3 +19,6 @@ end
 
 end
 
+function [ r ] = draw_boundary( r , c , i , j , iter ) 
+
+end

@@ -12,10 +12,10 @@ end
 tline = fgetl(fid);
 
 while ischar(tline)
-    [tok mat] = regexp(tline , '\(view (-{0,1}\d+\.\d+) (-{0,1}\d+\.\d+) (-{0,1}\d+\.\d+) (-{0,1}\d+\.\d+)\)' ...
+    [tok mat] = regexp(tline , ...
+        '\(view (-{0,1}\d+\.\d+) (-{0,1}\d+\.\d+) (-{0,1}\d+\.\d+) (-{0,1}\d+\.\d+)\)' ...
         ,'tokens', 'match' ) ;
     
-    tok{:} 
     if  size( tok{:} , 2 ) == 4
         a = str2num(tok{1}{1}) ;
         b = str2num(tok{1}{2}) ;

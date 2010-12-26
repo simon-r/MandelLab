@@ -18,5 +18,3 @@ for i = 1:iter
 end;
 
 end
-
-c = complexmap( 400 , 400 , [-2 1] , [-1 1] ) ;

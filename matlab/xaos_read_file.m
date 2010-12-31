@@ -29,7 +29,7 @@ end
 function [ m_data ] = match_view( tline , m_data )
 
     reg_num = '(\d*\.?)?\d+([Ee][-+]?\d+)?' ;
-    reg_num = '[-\+]?[\d\w\.-\+]+'
+    reg_num = '[-\+]?[\d\w\.-\+]+' ;
     
     regular_expr = sprintf(  '\\(view (%s) (%s) (%s) (%s)\\)' , reg_num , reg_num , reg_num , reg_num ) ;
     

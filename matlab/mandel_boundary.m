@@ -19,9 +19,24 @@ end
 
 end
 
-function [ r ] = draw_boundary( r , c , i , j , iter ) 
+function [ r ] = draw_boundary( r , c , i , j , th ) 
 
 [row col] = size(c) ;
+
+
+
+
+end
+
+function [ m ] build_bound_matrix( c , i , j ) 
+
+[row col] = size(c) ;
+
+for ni = 1:3
+    for nj = 1:3
+        
+    end ;
+end ;
 
 
 end

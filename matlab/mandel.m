@@ -1,13 +1,20 @@
-function [ res ] = mandel( c , iter )
+function [ res ] = mandel( c , iter , varargin )
 %mandel: compute the mendelbrot set
 %   c: matrix of complex coordinates
 %   iter: max iteractions
+
+optargin = size(varargin,2);
 
 z = zeros( size(c) ) ;
 %p = z ;
 
 res = ones( size(c) )*iter ;
-v = true(size(c)) ;
+
+if optargin == 0
+    v = true(size(c)) ;
+else
+    v = varargin(1) ;
+end ;
 
 for i = 1:iter
     z(v) = z(v).^2 + c(v) ;

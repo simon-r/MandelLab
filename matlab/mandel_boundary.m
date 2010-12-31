@@ -12,7 +12,7 @@ for i = 1:row
     
     if size(indx,2) ~= 0
         j=1 ;
-        r = draw_boundary( r , c , i , indx(j) , iter ) ;
+        r = draw_boundary( r , c , i , indx(j) , iter , iter ) ;
     end
     
 end

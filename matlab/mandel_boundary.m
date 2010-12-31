@@ -19,12 +19,5 @@ end
 
 end
 
-function [ r ] = draw_boundary( r , c , i , j , th )
 
-[row col] = size(c) ;
-
-
-
-
-end
 

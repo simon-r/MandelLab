@@ -2,9 +2,6 @@ function [ m , v ] = build_bound_matrix( c , i , j )
 
 [row col] = size(c) ;
 
-min_i = 4 ;
-min_j = 4 ;
-
 m = zeros(3) ;
 v = false(3) ;
 
